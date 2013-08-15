@@ -1,0 +1,25 @@
+#
+#   Parts of the development effort for this project have been
+#   sponsored by Texas Instrument, Inc. Thanks to TI for
+#   supporting an Open Source project!
+#
+#   This is at least a partial credits-file of individual people that
+#   have contributed to the this project. It is sorted by name and
+#   formatted to allow easy grepping and beautification by scripts.
+#   The fields are: name (N), email (E), web-address (W), PGP key ID
+#   and fingerprint (P), description (D), and snail-mail address (S).
+#
+
+N: Daniel Allred
+E: moridinga@users.sourceforge.net
+D: Project Initiation 
+D: NAND and NOR driver
+D: Serial Loading/Flashing Host and Targets
+
+N: Steve Gorwood
+D: Testing
+D: DM35x Porting
+
+N: Sandeep Paulraj
+D: Testing
+D: DM357 Porting, DM36x Porting

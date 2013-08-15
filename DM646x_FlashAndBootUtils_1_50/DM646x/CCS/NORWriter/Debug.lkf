@@ -1,0 +1,7 @@
+--abi=eabi -z -cr -m"./Debug/NORWriter.map" -o"./Debug/NORWriter.out" -w -x -i"C:/CCStudio_v3.3/tms470/cgtools4_5_1/lib"
+"u:\GForge\cat_flashutils\scripts\DM646x_FlashAndBootUtils_1_50\DM646x\CCS\NORWriter\Debug\debug.obj"
+"u:\GForge\cat_flashutils\scripts\DM646x_FlashAndBootUtils_1_50\DM646x\CCS\NORWriter\Debug\device.obj"
+"u:\GForge\cat_flashutils\scripts\DM646x_FlashAndBootUtils_1_50\DM646x\CCS\NORWriter\Debug\nor.obj"
+"u:\GForge\cat_flashutils\scripts\DM646x_FlashAndBootUtils_1_50\DM646x\CCS\NORWriter\Debug\norwriter.obj"
+"u:\GForge\cat_flashutils\scripts\DM646x_FlashAndBootUtils_1_50\DM646x\CCS\NORWriter\Debug\util.obj"
+"u:\GForge\cat_flashutils\scripts\DM646x_FlashAndBootUtils_1_50\DM646x\CCS\NORWriter\NORWriter.cmd"

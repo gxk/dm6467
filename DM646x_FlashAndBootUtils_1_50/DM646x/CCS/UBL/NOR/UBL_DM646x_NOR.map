@@ -1,0 +1,242 @@
+******************************************************************************
+                  TMS470 Linker PC v4.5.1                      
+******************************************************************************
+>> Linked Wed Apr 08 12:33:57 2009
+
+OUTPUT FILE NAME:   <u:/GForge/cat_flashutils/scripts/DM646x_FlashAndBootUtils_1_50/DM646x/CCS/UBL/NOR/UBL_DM646x_NOR.out>
+ENTRY POINT SYMBOL: "boot"  address: 00000100
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  ARM_I_IVT             00000000   00000020  00000000  00000020  R  X
+  UBL_I_SELFCOPY        00000020   000000e0  00000000  000000e0  R  X
+  UBL_I_TEXT            00000100   00004b00  00002590  00002570  R  X
+  UBL_D_SELFCOPY        00010020   000000e0  00000000  000000e0  RW  
+  UBL_D_TEXT            00010100   00004b00  00000000  00004b00  RW  
+  UBL_D_DATA            00014c00   00000400  00000050  000003b0  RW  
+  UBL_BSS               00017800   00000400  0000001c  000003e4  RW  
+  UBL_STACK             00017c00   00000400  00000000  00000400  RW  
+  UBL_L2SRAM            11818000   00020000  00000000  00020000  RW X
+  UBL_F_SELFCOPY        42000000   000000e0  00000068  00000078  R  X
+  UBL_F_TEXT            420000e0   00004b00  00002590  00002570  R   
+  UBL_F_DATA            42004be0   00000400  00000050  000003b0  R   
+  UBL_DRAM              80000000   10000000  00000000  10000000  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000100    420000e0    00002590   00002590    r-x
+  00000100    420000e0    00002590   00002590    r-x .text
+00014c00    42004be0    00000050   00000050    r--
+  00014c00    42004be0    00000050   00000050    r-- .data
+00017800    00017800    0000001c   00000000    rw-
+  00017800    00017800    0000001c   00000000    rw- .bss
+42000000    42000000    00000068   00000068    r-x
+  42000000    42000000    00000068   00000068    r-x .selfcopy
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.bss       0    00017800    0000001c     UNINITIALIZED
+                  00017800    00000010     nor.obj (.bss)
+                  00017810    00000008     ubl.obj (.bss)
+                  00017818    00000004     util.obj (.bss)
+
+.selfcopy 
+*          0    42000000    00000068     
+                  42000000    00000068     selfcopy.obj (.selfcopy)
+
+.text      0    420000e0    00002590     RUN ADDR = 00000100
+                  420000e0    00000050     boot.obj (.boot)
+                  42000130    0000149c     nor.obj (.text)
+                  420015cc    00000814     device.obj (.text)
+                  42001de0    00000350     uart.obj (.text)
+                  42002130    00000228     util.obj (.text)
+                  42002358    000001dc     ubl.obj (.text)
+                  42002534    000000f0     norboot.obj (.text)
+                  42002624    0000004b     debug.obj (.text)
+                  4200266f    00000001     --HOLE-- [fill = 000000ff]
+
+.data      0    42004be0    00000050     RUN ADDR = 00014c00
+                  42004be0    00000044     device.obj (.const)
+                  42004c24    00000007     device.obj (.const:.string)
+                  42004c2b    00000005     --HOLE-- [fill = 000000ff]
+
+.ddr_mem   0    80000000    10000000     DSECT
+                  80000000    10000000     --HOLE--
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+10000000   DDRSize
+80000000   DDRStart
+0000266c   DEBUG_printHexInt
+00002664   DEBUG_printString
+00002648   DEBUG_readChar
+00002644   DEBUG_readString
+00001930   DEVICE_DDR2Init
+00001a14   DEVICE_EMIFInit
+00001be0   DEVICE_I2C0Init
+00001d58   DEVICE_I2C0Reset
+000018b8   DEVICE_LPSCTransition
+000016e4   DEVICE_PLL1Init
+000017e0   DEVICE_PLL2Init
+0000163c   DEVICE_PSCInit
+00001ba4   DEVICE_TIMER0Init
+00001d18   DEVICE_TIMER0Start
+00001d08   DEVICE_TIMER0Status
+00001ce0   DEVICE_TIMER0Stop
+00001a78   DEVICE_UART0Init
+00001cd0   DEVICE_bootMode
+000019fc   DEVICE_emifBusWidth
+00001be8   DEVICE_init
+00001614   DEVICE_pinPowerControl
+000015ec   DEVICE_pinmuxControl
+00008000   DRAMSize
+00010000   DRAMStart
+02000000   EMIFSize
+42000000   EMIFStart
+90000000   EXTERNAL_RAM_END
+80000000   EXTERNAL_RAM_START
+00000050   FLASHDATASize
+42004be0   FLASHDATAStart
+00002590   FLASHTEXTSize
+420000e0   FLASHTEXTStart
+00008000   IRAMSize
+00000000   IRAMStart
+11818000   L2Start
+00002554   NORBOOT_copy
+00001390   NOR_erase
+0000017c   NOR_getBlockInfo
+00001470   NOR_globalErase
+00000fd4   NOR_open
+00000ca8   NOR_writeBytes
+00018000   STACKStart
+000020b8   UART_checkSequence
+00001fbc   UART_recvHexData
+00001fa0   UART_recvString
+00001f00   UART_recvStringN
+00001eb8   UART_sendHexInt
+00001e34   UART_sendString
+00002180   UTIL_allocMem
+00002300   UTIL_buildCRC16Table
+000022a8   UTIL_buildCRC32Table
+00002228   UTIL_calcCRC16
+000021ec   UTIL_calcCRC32
+000021c0   UTIL_callocMem
+00002174   UTIL_getCurrMemPtr
+00002168   UTIL_setCurrMemPtr
+00002150   UTIL_waitLoop
+00002150   UTIL_waitLoopAccurate
+00000100   __TI_static_base__
+ffffffff   __binit__
+ffffffff   __c_args__
+00010020   __selfcopydest
+42000000   __selfcopysrc
+42004c30   __selfcopysrcend
+42000050   _dramstart
+4200005c   _selfcopydest
+42000058   _selfcopysrc
+42000060   _selfcopysrcend
+00000148   _stack
+ffffffff   binit
+00000100   boot
+00014c40   devString
+00017814   gEntryPoint
+00002438   main
+42000000   selfcopy
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   IRAMStart
+00000050   FLASHDATASize
+00000100   __TI_static_base__
+00000100   boot
+00000148   _stack
+0000017c   NOR_getBlockInfo
+00000ca8   NOR_writeBytes
+00000fd4   NOR_open
+00001390   NOR_erase
+00001470   NOR_globalErase
+000015ec   DEVICE_pinmuxControl
+00001614   DEVICE_pinPowerControl
+0000163c   DEVICE_PSCInit
+000016e4   DEVICE_PLL1Init
+000017e0   DEVICE_PLL2Init
+000018b8   DEVICE_LPSCTransition
+00001930   DEVICE_DDR2Init
+000019fc   DEVICE_emifBusWidth
+00001a14   DEVICE_EMIFInit
+00001a78   DEVICE_UART0Init
+00001ba4   DEVICE_TIMER0Init
+00001be0   DEVICE_I2C0Init
+00001be8   DEVICE_init
+00001cd0   DEVICE_bootMode
+00001ce0   DEVICE_TIMER0Stop
+00001d08   DEVICE_TIMER0Status
+00001d18   DEVICE_TIMER0Start
+00001d58   DEVICE_I2C0Reset
+00001e34   UART_sendString
+00001eb8   UART_sendHexInt
+00001f00   UART_recvStringN
+00001fa0   UART_recvString
+00001fbc   UART_recvHexData
+000020b8   UART_checkSequence
+00002150   UTIL_waitLoop
+00002150   UTIL_waitLoopAccurate
+00002168   UTIL_setCurrMemPtr
+00002174   UTIL_getCurrMemPtr
+00002180   UTIL_allocMem
+000021c0   UTIL_callocMem
+000021ec   UTIL_calcCRC32
+00002228   UTIL_calcCRC16
+000022a8   UTIL_buildCRC32Table
+00002300   UTIL_buildCRC16Table
+00002438   main
+00002554   NORBOOT_copy
+00002590   FLASHTEXTSize
+00002644   DEBUG_readString
+00002648   DEBUG_readChar
+00002664   DEBUG_printString
+0000266c   DEBUG_printHexInt
+00008000   DRAMSize
+00008000   IRAMSize
+00010000   DRAMStart
+00010020   __selfcopydest
+00014c40   devString
+00017814   gEntryPoint
+00018000   STACKStart
+02000000   EMIFSize
+10000000   DDRSize
+11818000   L2Start
+42000000   EMIFStart
+42000000   __selfcopysrc
+42000000   selfcopy
+42000050   _dramstart
+42000058   _selfcopysrc
+4200005c   _selfcopydest
+42000060   _selfcopysrcend
+420000e0   FLASHTEXTStart
+42004be0   FLASHDATAStart
+42004c30   __selfcopysrcend
+80000000   DDRStart
+80000000   EXTERNAL_RAM_START
+90000000   EXTERNAL_RAM_END
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+
+[77 symbols]
