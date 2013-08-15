@@ -7,6 +7,7 @@ to get this project:
 git clone https://github.com/gxk/dm6467.git
 
 to build the whole project:
+sudo apt-get install mono-complete
 export ARCH=arm
 cd DM646x_FlashAndBootUtils_1_50/DM646x/GNU
 make all
