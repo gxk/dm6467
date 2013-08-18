@@ -67,7 +67,7 @@ extern __FAR__ Uint32 EXTERNAL_RAM_START;
 #define VTPVAL2 (0x00000002)
 #define VTP_WAIT_VAL (0x000004B0)
 
-#define DM6467_1GHz_MICRON
+#define DM6467_1GHz_HDDVC
 
 
 /************************************************************
@@ -134,6 +134,28 @@ extern __FAR__ Uint32 EXTERNAL_RAM_START;
 #elif defined(DM6467_900MHz)
 
 #elif defined(DM6467_1GHz_MICRON)
+  // For Micron MT47H64M16BT-3 @ 400 MHz
+  static const Uint8 DDR_NM = 0;
+  static const Uint8 DDR_CL = 5;
+  static const Uint8 DDR_IBANK = 3;
+  static const Uint8 DDR_PAGESIZE = 2;
+  static const Uint8 DDR_T_RFC = 50;
+  static const Uint8 DDR_T_RP = 5;
+  static const Uint8 DDR_T_RCD = 5;
+  static const Uint8 DDR_T_WR = 6;
+  static const Uint8 DDR_T_RAS = 18;
+  static const Uint8 DDR_T_RC = 23;
+  static const Uint8 DDR_T_RRD = 4;
+  static const Uint8 DDR_T_WTR = 3;
+  static const Uint8 DDR_T_RASMAX = 17;
+  static const Uint8 DDR_T_XP = 2;
+  static const Uint8 DDR_T_XSNR = 59;
+  static const Uint8 DDR_T_XSRD = 0xc7;
+  static const Uint8 DDR_T_RTP = 3;
+  static const Uint8 DDR_T_CKE = 2;
+  static const Uint16 DDR_RR = 0xc57;
+  static const Uint8 DDR_READ_Latency = 7; 
+#elif defined(DM6467_1GHz_HDDVC)
   // For Micron MT47H64M16BT-3 @ 400 MHz
   static const Uint8 DDR_NM = 0;
   static const Uint8 DDR_CL = 5;
@@ -226,6 +248,10 @@ extern __FAR__ Uint32 EXTERNAL_RAM_START;
   static const Uint32 PLL1_Mult = 25;       // DSP=1000 MHz @ 40M input
   static const Uint32 PLL1Div4_ratio = 10;  // ATA divider  
   static const Uint32 PLL2_Mult = 20;       // DDR=800 MHz @ 40M input  
+#elif defined(DM6467_1GHz_HDDVC)
+  static const Uint32 PLL1_Mult = 30;       // DSP=990 MHz @ 33M input
+  static const Uint32 PLL1Div4_ratio = 10;  // ATA divider  
+  static const Uint32 PLL2_Mult = 24;       // DDR=528 MHz @ 33M input
 #elif defined(DM6467_1GHz_ELPIDA)
   static const Uint32 PLL1_Mult = 25;       // DSP=1000 MHz @ 40M input
   static const Uint32 PLL1Div4_ratio = 10;  // ATA divider  
