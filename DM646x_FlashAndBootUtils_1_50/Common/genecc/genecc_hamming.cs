@@ -208,7 +208,7 @@ namespace TIBootAndFlash
       {
         for (int j=0; j<512; j++)
         {
-          subArray[j] = (Byte) (((i+j) >= fileData.Length) ? (0xFF) : fileData[i+j]);
+          subArray[j] = (((i+j) >= fileData.Length) ? (Byte) (0xFF) : (Byte)fileData[i+j]);
         }
         
         // Calculate parity of the message data
